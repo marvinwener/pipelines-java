@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/marvinwener/PipelineDemoJava/_apis/build/status/marvinwener.pipelines-java?branchName=master)](https://dev.azure.com/marvinwener/PipelineDemoJava/_build/latest?definitionId=4&branchName=master)
 
 # Contributing
 
