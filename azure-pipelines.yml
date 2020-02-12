@@ -10,6 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'sonarqube_beza_home'
+    scannerMode: 'Other'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -20,21 +24,14 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: "JaCoCo"
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
-
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'sonarqube_beza_home'
-    scannerMode: 'Other'
-
-- task: SonarQubeAnalyze@4
-
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
