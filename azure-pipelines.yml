@@ -10,6 +10,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: ticsqualitygate@0
+  inputs:
+    ticsqualitygateapi: 'https://viewer-sdk4ed.tiobe.com/tiobeweb/TICS/api/public/v1/Measure?metrics=tqiCodingStd&filters=Project(SDK4EDIntegration)'
+    projectname: 'SDK4EDIntegration'
+    projectbranch: 'master'
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'sonarqube_beza_home'
@@ -36,8 +42,3 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
-- task: ticsqualitygate@0
-  inputs:
-    ticsqualitygateapi: 'https://viewer-sdk4ed.tiobe.com/tiobeweb/TICS/api/public/v1/Measure?metrics=tqiCodingStd&filters=Project(SDK4EDIntegration)'
-    projectname: 'SDK4EDIntegration'
-    projectbranch: 'master'
