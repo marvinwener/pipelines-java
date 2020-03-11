@@ -13,7 +13,8 @@ steps:
 - task: ticsqualitygate@0
   inputs:
     TiCSQualityGateService: 'tics-viewer-pipelines-java'
-- task: DownloadPipelineArtifact@2
+- task: PublishPipelineArtifact@1
   inputs:
-    buildType: 'current'
     targetPath: '$(Pipeline.Workspace)'
+    artifact: 'summary'
+    publishLocation: 'pipeline'
