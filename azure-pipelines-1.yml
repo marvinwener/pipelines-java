@@ -12,7 +12,7 @@ pool:
 steps:
 - task: ticsqualitygate@0
   inputs:
-    TiCSQualityGateService: 'tics-viewer-pipelines-java'
+    TiCSQualityGateService: 'tics-viewer-dr'
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
