@@ -13,8 +13,3 @@ steps:
 - task: ticsqualitygate@0
   inputs:
     TiCSQualityGateService: 'tics_viewer_dr'
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'summary'
-    publishLocation: 'pipeline'
