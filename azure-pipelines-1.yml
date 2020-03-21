@@ -12,4 +12,3 @@ pool:
 steps:
 - task: ticsqualitygate@0
   inputs:
-    TiCSQualityGateService: 'tics_viewer_dr'
