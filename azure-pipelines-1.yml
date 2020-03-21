@@ -12,4 +12,4 @@ pool:
 steps:
 - task: ticsqualitygate@0
   inputs:
-    TICSQualityGateService: 'no_auth_dr'
+    TICSQualityGateService: 'my_tics_viewer_conn'
