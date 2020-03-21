@@ -11,3 +11,5 @@ pool:
 
 steps:
 - task: ticsqualitygate@0
+  inputs:
+    TICSQualityGateService: 'no_auth_dr'
